@@ -1,0 +1,119 @@
+
+---
+
+### Code:
+
+```python
+# Take an integer input from the user
+x = int(input("Enter the integer number: "))
+```
+
+**Explanation**:  
+- The program starts by prompting the user to enter an integer number.
+- `input()` function takes the input as a string, and `int()` converts it into an integer (`x`).
+
+---
+
+```python
+# Convert the integer to a string
+integer_string = str(x)
+```
+
+**Explanation**:  
+- The integer `x` is converted to a string using `str(x)` so that it can be processed character by character.
+
+---
+
+```python
+# Convert the string into a list of characters
+list_integrs = list(integer_string)
+```
+
+**Explanation**:  
+- `list(integer_string)` converts the string into a list of individual characters, making it easier to manipulate each digit.
+
+---
+
+```python
+# Find the length of the list
+length = len(list_integrs)
+```
+
+**Explanation**:  
+- The length of the list `list_integrs` is calculated using `len()`. This value is stored in `length` to iterate through the list later.
+
+---
+
+```python
+# Initialize an empty list to store reversed digits
+list_integrs2 = []
+```
+
+**Explanation**:  
+- `list_integrs2` is an empty list initialized to store the reversed digits of the original number.
+
+---
+
+```python
+# Loop through the list in reverse order
+for i in range(length - 1, -1, -1):
+    if list_integrs[i] != '0':
+        list_integrs2.append(list_integrs[i])
+    else:
+        continue
+```
+
+**Explanation**:
+1. The loop iterates through `list_integrs` in reverse order using `range(length - 1, -1, -1)`:
+   - `length - 1` starts the loop at the last index.
+   - `-1` stops at the beginning of the list.
+   - The loop moves in reverse with a step of `-1`.
+
+2. Inside the loop:
+   - If the current character (`list_integrs[i]`) is not `'0'`, it is appended to `list_integrs2` using `list_integrs2.append(list_integrs[i])`.
+   - If the character is `'0'`, the `continue` statement skips to the next iteration without adding it.
+
+---
+
+```python
+# Join the reversed digits into a single string
+String_of_intergs = ''.join(list_integrs2)
+```
+
+**Explanation**:  
+- The `join()` method combines all elements of `list_integrs2` into a single string.
+- This results in the reversed number without zeros.
+
+---
+
+```python
+# Print the final reversed string
+print(String_of_intergs)
+```
+
+**Explanation**:
+- The final reversed string (`String_of_intergs`) is printed to the console.
+
+---
+
+### Example Input/Output:
+
+1. **Input**:  
+   `Enter the integer number: 12030`  
+
+   **Output**:  
+   `32021`
+
+2. **Input**:  
+   `Enter the integer number: 700100`  
+
+   **Output**:  
+   `1007`
+
+---
+
+### Points for Improvement:
+
+- The program doesn't currently handle **negative numbers**. If you want to include support for signs (`+` or `-`), you can add logic to check for them at the start of the input.
+
+Would you like an updated version of the code that includes handling for signs?
